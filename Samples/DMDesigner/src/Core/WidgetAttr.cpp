@@ -455,7 +455,7 @@ DMCode WidgetAttr::InitAttrArray()
 		//1.取得类名列表
 		m_strList.RemoveAll();
 		CStringW strClassName = m_pCurDUI->V_GetClassName();
-		if (0 == strClassName.CompareNoCase(L"Root"))
+		if (0 == strClassName.CompareNoCase(L"root"))
 		{
 			strClassName = L"window";
 		}
@@ -470,7 +470,7 @@ DMCode WidgetAttr::InitAttrArray()
 		}
 		DMXmlDocument doc;
 		DMXmlNode XmlBase = doc.Base();
-		DMXmlNode XmlRoot = XmlBase.InsertChildNode(L"Root");
+		DMXmlNode XmlRoot = XmlBase.InsertChildNode(L"root");
 		for (int i=0; i<nCount; i++)
 		{
 			DMXmlNode XmlNode = XmlRoot.InsertChildNode(L"propgrid");
@@ -616,7 +616,7 @@ void WidgetAttr::InitSpecialValue(CStringW& strValue, DMXmlInitAttrPtr pInitAttr
 	{
 		strInitValue = L"0";
 	}
-	if (0 == m_strList[0].CompareNoCase(L"DUIStaticAttr") && 0 == _wcsicmp(pInitAttr->m_pAttr->GetName(),L"bool_bmsgnohandle"))
+	if (0 == m_strList[0].CompareNoCase(L"DUILabelAttr") && 0 == _wcsicmp(pInitAttr->m_pAttr->GetName(),L"bool_bmsgnohandle"))
 	{
 		strInitValue = L"1";
 	}   
